@@ -1,0 +1,7 @@
+This
+Is
+a
+File
+Reader
+Spout
+example

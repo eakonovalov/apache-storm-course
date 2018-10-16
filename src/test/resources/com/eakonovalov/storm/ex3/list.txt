@@ -1,0 +1,6 @@
+1,Ivan,Ivanov,M,ivan@gmail.com
+2,Petr,Petrov,M,petr@gmail.com
+3,Nikolay,Nikolayev,M,nick@gmail.com
+4,Marina,Marinina,F,marina@gmail.com
+5,Alex,Alexandrov,M,alex@gmail.com
+6,Tatyana,Tatyanina,f,tanya@gmail.com
