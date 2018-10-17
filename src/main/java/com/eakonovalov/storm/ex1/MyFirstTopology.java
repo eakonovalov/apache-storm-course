@@ -1,5 +1,6 @@
 package com.eakonovalov.storm.ex1;
 
+import org.apache.storm.Config;
 import org.apache.storm.generated.StormTopology;
 import org.apache.storm.topology.TopologyBuilder;
 
@@ -14,6 +15,13 @@ public class MyFirstTopology {
         builder.setBolt("My-First-Bolt", new MyFirstBolt()).shuffleGrouping("My-First-Spout");
 
         return builder.createTopology();
+    }
+
+    public static Config createConfig() {
+        Config config = new Config();
+        config.setDebug(true);
+
+        return config;
     }
 
 }
