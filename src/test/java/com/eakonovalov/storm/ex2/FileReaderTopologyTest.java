@@ -10,7 +10,7 @@ public class FileReaderTopologyTest {
         LocalCluster cluster = new LocalCluster();
         try {
             cluster.submitTopology("File-Reader-Topology", FileReaderTopology.createConfig(), FileReaderTopology.createTopology());
-            Thread.sleep(5000);
+            Thread.sleep(10000);
         }
         catch (InterruptedException e) {
             System.out.println(e.getMessage());

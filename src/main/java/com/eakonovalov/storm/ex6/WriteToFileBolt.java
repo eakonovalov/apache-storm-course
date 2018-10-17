@@ -1,4 +1,4 @@
-package com.eakonovalov.storm.ex4;
+package com.eakonovalov.storm.ex6;
 
 import org.apache.storm.task.TopologyContext;
 import org.apache.storm.topology.BasicOutputCollector;
@@ -30,16 +30,15 @@ public class WriteToFileBolt extends BaseBasicBolt {
 
     @Override
     public void execute(Tuple input, BasicOutputCollector collector) {
-        String firstName = input.getStringByField("first_name");
-        String lastName = input.getString(2);
-
-        writer.println(firstName + "," + lastName);
-        collector.emit(new Values(firstName, lastName));
+        String s = input.getStringByField("integer") + "-" + input.getStringByField("bucket");
+        collector.emit(new Values(s));
+        writer.println(s);
+        writer.flush();
     }
 
     @Override
     public void declareOutputFields(OutputFieldsDeclarer declarer) {
-        declarer.declare(new Fields("first_name", "last_name"));
+        declarer.declare(new Fields("result"));
     }
 
     @Override

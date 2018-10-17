@@ -10,7 +10,7 @@ public class WriteToFileTopologyTest {
         LocalCluster cluster = new LocalCluster();
         try {
             cluster.submitTopology("Write-To-File-Topology", WriteToFileTopology.createConfig(), WriteToFileTopology.createTopology());
-            Thread.sleep(5000);
+            Thread.sleep(15000);
         }
         catch (InterruptedException e) {
             System.out.println(e.getMessage());
