@@ -15,7 +15,7 @@ public class MyFirstTopologyTest {
 
         LocalCluster cluster = new LocalCluster();
         try {
-            cluster.submitTopology("My-First-FileReaderTopology", config, MyFirstTopology.createTopology());
+            cluster.submitTopology("My-First-Topology", config, MyFirstTopology.createTopology());
             Thread.sleep(11000);
         }
         catch (InterruptedException e) {
