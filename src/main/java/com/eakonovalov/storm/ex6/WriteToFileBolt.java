@@ -31,9 +31,8 @@ public class WriteToFileBolt extends BaseBasicBolt {
     @Override
     public void execute(Tuple input, BasicOutputCollector collector) {
         String s = input.getStringByField("integer") + "-" + input.getStringByField("bucket");
-        collector.emit(new Values(s));
         writer.println(s);
-        writer.flush();
+        collector.emit(new Values(s));
     }
 
     @Override

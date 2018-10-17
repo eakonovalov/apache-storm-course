@@ -50,7 +50,7 @@ public class FileReaderSpout extends BaseRichSpout {
 
     @Override
     public void declareOutputFields(OutputFieldsDeclarer declarer) {
-        declarer.declare(new Fields("word"));
+        declarer.declare(new Fields("line"));
     }
 
 }
