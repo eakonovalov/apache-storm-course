@@ -26,4 +26,5 @@ public class WordCountTopology {
 
         return config;
     }
+
 }
