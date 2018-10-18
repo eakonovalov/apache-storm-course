@@ -12,11 +12,9 @@ public class WordCountTopologyTest {
             cluster.submitTopology("Word-Count-Topology", WordCountTopology.createConfig(),
                     WordCountTopology.createTopology());
             Thread.sleep(15000);
-        }
-        catch (InterruptedException e) {
+        } catch (InterruptedException e) {
             System.out.println(e.getMessage());
-        }
-        finally {
+        } finally {
             cluster.shutdown();
         }
     }

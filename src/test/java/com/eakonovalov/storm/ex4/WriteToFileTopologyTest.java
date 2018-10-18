@@ -11,11 +11,9 @@ public class WriteToFileTopologyTest {
         try {
             cluster.submitTopology("Write-To-File-Topology", WriteToFileTopology.createConfig(), WriteToFileTopology.createTopology());
             Thread.sleep(15000);
-        }
-        catch (InterruptedException e) {
+        } catch (InterruptedException e) {
             System.out.println(e.getMessage());
-        }
-        finally {
+        } finally {
             cluster.shutdown();
         }
     }

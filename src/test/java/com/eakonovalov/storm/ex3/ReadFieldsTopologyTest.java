@@ -11,11 +11,9 @@ public class ReadFieldsTopologyTest {
         try {
             cluster.submitTopology("Read-Fields-Topology", ReadFieldsTopology.createConfig(), ReadFieldsTopology.createTopology());
             Thread.sleep(10000);
-        }
-        catch (InterruptedException e) {
+        } catch (InterruptedException e) {
             System.out.println(e.getMessage());
-        }
-        finally {
+        } finally {
             cluster.shutdown();
         }
     }

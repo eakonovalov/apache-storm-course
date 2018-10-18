@@ -10,11 +10,9 @@ public class AllGroupingTopologyTest {
         try {
             cluster.submitTopology("All-Grouping-Topology", AllGroupingTopology.createConfig(), AllGroupingTopology.createTopology());
             Thread.sleep(15000);
-        }
-        catch (InterruptedException e) {
+        } catch (InterruptedException e) {
             System.out.println(e.getMessage());
-        }
-        finally {
+        } finally {
             cluster.shutdown();
         }
     }

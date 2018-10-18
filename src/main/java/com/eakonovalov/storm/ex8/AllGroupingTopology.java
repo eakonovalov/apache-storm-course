@@ -5,7 +5,6 @@ import com.eakonovalov.storm.ex6.WriteToFileBolt;
 import org.apache.storm.Config;
 import org.apache.storm.generated.StormTopology;
 import org.apache.storm.topology.TopologyBuilder;
-import org.apache.storm.tuple.Fields;
 
 /**
  * Created by ekonovalov on 2018-10-17.

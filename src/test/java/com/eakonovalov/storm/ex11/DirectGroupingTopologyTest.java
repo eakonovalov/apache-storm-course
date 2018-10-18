@@ -12,11 +12,9 @@ public class DirectGroupingTopologyTest {
             cluster.submitTopology("Direct-Grouping-Topology", DirectGroupingTopology.createConfig(),
                     DirectGroupingTopology.createTopology());
             Thread.sleep(15000);
-        }
-        catch (InterruptedException e) {
+        } catch (InterruptedException e) {
             System.out.println(e.getMessage());
-        }
-        finally {
+        } finally {
             cluster.shutdown();
         }
     }

@@ -11,11 +11,9 @@ public class CustomGroupingTopologyTest {
             cluster.submitTopology("Custom-Grouping-Topology", CustomGroupingTopology.createConfig(),
                     CustomGroupingTopology.createTopology());
             Thread.sleep(15000);
-        }
-        catch (InterruptedException e) {
+        } catch (InterruptedException e) {
             System.out.println(e.getMessage());
-        }
-        finally {
+        } finally {
             cluster.shutdown();
         }
     }

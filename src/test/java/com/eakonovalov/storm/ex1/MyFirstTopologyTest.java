@@ -11,11 +11,9 @@ public class MyFirstTopologyTest {
         try {
             cluster.submitTopology("My-First-Topology", MyFirstTopology.createConfig(), MyFirstTopology.createTopology());
             Thread.sleep(11000);
-        }
-        catch (InterruptedException e) {
+        } catch (InterruptedException e) {
             System.out.println(e.getMessage());
-        }
-        finally {
+        } finally {
             cluster.shutdown();
         }
 

@@ -14,11 +14,9 @@ public class ShuffleGroupingTopologyTest {
         try {
             cluster.submitTopology("Shuffle-Grouping-Topology", ShuffleGroupingTopology.createConfig(), ShuffleGroupingTopology.createTopology());
             Thread.sleep(15000);
-        }
-        catch (InterruptedException e) {
+        } catch (InterruptedException e) {
             System.out.println(e.getMessage());
-        }
-        finally {
+        } finally {
             cluster.shutdown();
         }
     }

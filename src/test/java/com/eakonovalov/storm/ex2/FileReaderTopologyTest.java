@@ -11,11 +11,9 @@ public class FileReaderTopologyTest {
         try {
             cluster.submitTopology("File-Reader-Topology", FileReaderTopology.createConfig(), FileReaderTopology.createTopology());
             Thread.sleep(10000);
-        }
-        catch (InterruptedException e) {
+        } catch (InterruptedException e) {
             System.out.println(e.getMessage());
-        }
-        finally {
+        } finally {
             cluster.shutdown();
         }
     }

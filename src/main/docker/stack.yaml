@@ -11,23 +11,23 @@ services:
     container_name: nimbus
     command: storm nimbus
     depends_on:
-      - zookeeper
+    - zookeeper
     links:
-      - zookeeper
+    - zookeeper
     restart: always
     ports:
-      - 6627:6627
+    - 6627:6627
 
   supervisor:
     image: storm
     container_name: supervisor
     command: storm supervisor
     depends_on:
-      - nimbus
-      - zookeeper
+    - nimbus
+    - zookeeper
     links:
-      - nimbus
-      - zookeeper
+    - nimbus
+    - zookeeper
     restart: always
 
   ui:
@@ -35,9 +35,9 @@ services:
     container_name: ui
     command: storm ui
     depends_on:
-      - zookeeper
+    - zookeeper
     links:
-      - zookeeper
+    - zookeeper
     restart: always
     ports:
-      - 8080:8080
+    - 8080:8080

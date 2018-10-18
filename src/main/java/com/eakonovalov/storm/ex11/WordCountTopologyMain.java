@@ -1,6 +1,5 @@
 package com.eakonovalov.storm.ex11;
 
-import com.eakonovalov.storm.ex10.DirectGroupingTopology;
 import org.apache.storm.StormSubmitter;
 import org.apache.storm.generated.AlreadyAliveException;
 import org.apache.storm.generated.AuthorizationException;

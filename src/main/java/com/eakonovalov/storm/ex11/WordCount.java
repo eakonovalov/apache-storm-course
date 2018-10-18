@@ -28,10 +28,9 @@ public class WordCount extends BaseBasicBolt {
     @Override
     public void execute(Tuple input, BasicOutputCollector collector) {
         String word = input.getString(0);
-        if(!counters.containsKey(word)) {
+        if (!counters.containsKey(word)) {
             counters.put(word, 1);
-        }
-        else {
+        } else {
             counters.put(word, counters.get(word) + 1);
         }
     }
@@ -45,7 +44,7 @@ public class WordCount extends BaseBasicBolt {
     public void cleanup() {
         try {
             PrintWriter writer = new PrintWriter(fileName, "UTF-8");
-            for(Map.Entry<String, Integer> entry : counters.entrySet()) {
+            for (Map.Entry<String, Integer> entry : counters.entrySet()) {
                 writer.println(entry.getKey() + ": " + entry.getValue());
             }
             writer.close();

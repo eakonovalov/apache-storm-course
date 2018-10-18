@@ -24,21 +24,19 @@ public class FileReaderSpout extends BaseRichSpout {
         this.collector = collector;
         try {
             reader = new BufferedReader(new FileReader(conf.get("file").toString()));
-        }
-        catch (FileNotFoundException e) {
+        } catch (FileNotFoundException e) {
             throw new RuntimeException("Error reading file [" + conf.get("file") + "]", e);
         }
     }
 
     @Override
     public void nextTuple() {
-        if(!completed) {
+        if (!completed) {
             try {
                 String line = reader.readLine();
-                if(line != null) {
+                if (line != null) {
                     collector.emit(new Values(line));
-                }
-                else {
+                } else {
                     completed = true;
                     reader.close();
                 }

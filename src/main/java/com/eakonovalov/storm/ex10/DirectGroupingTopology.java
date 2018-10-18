@@ -1,8 +1,6 @@
 package com.eakonovalov.storm.ex10;
 
-import com.eakonovalov.storm.ex6.IntegerSpout;
 import com.eakonovalov.storm.ex6.WriteToFileBolt;
-import com.eakonovalov.storm.ex9.BucketGrouping;
 import org.apache.storm.Config;
 import org.apache.storm.generated.StormTopology;
 import org.apache.storm.topology.TopologyBuilder;
