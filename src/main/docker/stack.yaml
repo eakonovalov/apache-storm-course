@@ -35,9 +35,25 @@ services:
     container_name: ui
     command: storm ui
     depends_on:
+    - nimbus
     - zookeeper
     links:
+    - nimbus
     - zookeeper
     restart: always
     ports:
     - 8080:8080
+
+  drpc:
+    image: storm
+    container_name: drpc
+    command: storm drpc
+    depends_on:
+    - nimbus
+    - zookeeper
+    links:
+    - nimbus
+    - zookeeper
+    restart: always
+    ports:
+    - 3772:3772

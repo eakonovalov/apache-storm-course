@@ -19,7 +19,7 @@ public class ResultBolt extends BaseBatchBolt<Long> {
 
     private BatchOutputCollector collector;
     private Long id;
-    private int count = 0;
+    private Result result = new Result();
 
     @Override
     public void prepare(Map conf, TopologyContext context, BatchOutputCollector collector, Long id) {
@@ -29,12 +29,17 @@ public class ResultBolt extends BaseBatchBolt<Long> {
 
     @Override
     public void execute(Tuple tuple) {
-        count += tuple.getInteger(1);
+        Result result = (Result) tuple.getValue(1);
+        this.result.matches += result.matches;
+        this.result.preDuplicates += result.preDuplicates;
+        this.result.postDuplicates += result.postDuplicates;
+        this.result.preOrphans += result.preOrphans;
+        this.result.postOrphans += result.postOrphans;
     }
 
     @Override
     public void finishBatch() {
-        collector.emit(new Values(id, count));
+        collector.emit(new Values(id, result));
     }
 
     @Override
