@@ -14,6 +14,8 @@ import java.util.Map;
  */
 public class MyFirstSpout extends BaseRichSpout {
 
+    private static final long serialVersionUID = -6561085568321062482L;
+
     private SpoutOutputCollector collector;
     private Integer i = 0;
 

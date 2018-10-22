@@ -14,6 +14,8 @@ import java.util.Map;
 
 public class WordCount extends BaseBasicBolt {
 
+    private static final long serialVersionUID = 8408529469890951420L;
+
     private Map<String, Integer> counters;
     private String fileName;
 

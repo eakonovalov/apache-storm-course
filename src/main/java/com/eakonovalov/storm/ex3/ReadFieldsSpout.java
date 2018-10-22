@@ -15,6 +15,8 @@ import java.util.Map;
 
 public class ReadFieldsSpout extends BaseRichSpout {
 
+    private static final long serialVersionUID = 3036834328519415547L;
+
     private SpoutOutputCollector collector;
     private BufferedReader reader;
     private boolean completed = false;

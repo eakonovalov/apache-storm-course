@@ -12,6 +12,8 @@ import org.apache.storm.tuple.Values;
  */
 public class MyFirstBolt extends BaseBasicBolt {
 
+    private static final long serialVersionUID = 4028160826456443553L;
+
     @Override
     public void execute(Tuple tuple, BasicOutputCollector collector) {
         collector.emit(new Values(tuple.getInteger(0) * 2));

@@ -14,6 +14,8 @@ import java.util.Map;
  */
 public class IntegerSpout extends BaseRichSpout {
 
+    private static final long serialVersionUID = 8173340790903069712L;
+
     private SpoutOutputCollector collector;
     private Integer i = 0;
 

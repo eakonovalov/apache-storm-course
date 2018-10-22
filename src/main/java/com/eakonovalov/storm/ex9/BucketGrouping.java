@@ -10,6 +10,8 @@ import java.util.List;
 
 public class BucketGrouping implements CustomStreamGrouping, Serializable {
 
+    private static final long serialVersionUID = 2357279008673057870L;
+
     private List<Integer> targetTasks;
 
     @Override

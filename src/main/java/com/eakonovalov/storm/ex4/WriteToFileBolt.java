@@ -15,6 +15,8 @@ import java.util.Map;
 
 public class WriteToFileBolt extends BaseBasicBolt {
 
+    private static final long serialVersionUID = -5995178027849079421L;
+
     private PrintWriter writer;
 
     @Override

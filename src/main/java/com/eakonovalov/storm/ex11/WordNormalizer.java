@@ -9,6 +9,8 @@ import org.apache.storm.tuple.Values;
 
 public class WordNormalizer extends BaseBasicBolt {
 
+    private static final long serialVersionUID = 531288889087692680L;
+
     @Override
     public void execute(Tuple input, BasicOutputCollector collector) {
         String sentence = input.getString(0);

@@ -12,6 +12,8 @@ import java.util.Map;
 
 public class DirectGroupingSpout extends BaseRichSpout {
 
+    private static final long serialVersionUID = -2677104848903779280L;
+
     private SpoutOutputCollector collector;
     private List<Integer> boltIds;
     private Integer i = 0;

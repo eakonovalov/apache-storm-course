@@ -9,6 +9,8 @@ import org.apache.storm.tuple.Values;
 
 public class SimpleBolt extends BaseBasicBolt {
 
+    private static final long serialVersionUID = 988616440115807766L;
+
     @Override
     public void execute(Tuple input, BasicOutputCollector collector) {
         collector.emit(new Values(input.getString(0).toLowerCase()));

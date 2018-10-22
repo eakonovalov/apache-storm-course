@@ -9,6 +9,8 @@ import org.apache.storm.tuple.Values;
 
 public class PlusTenBolt extends BaseBasicBolt {
 
+    private static final long serialVersionUID = -3575369247582508114L;
+
     @Override
     public void execute(Tuple input, BasicOutputCollector collector) {
         int i = Integer.parseInt(input.getString(1)) + 10;

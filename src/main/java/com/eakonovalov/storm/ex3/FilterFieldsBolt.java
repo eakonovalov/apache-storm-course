@@ -9,6 +9,8 @@ import org.apache.storm.tuple.Values;
 
 public class FilterFieldsBolt extends BaseBasicBolt {
 
+    private static final long serialVersionUID = 8391372298023120857L;
+
     @Override
     public void execute(Tuple input, BasicOutputCollector collector) {
         String firstName = input.getStringByField("first_name");
