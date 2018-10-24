@@ -13,6 +13,8 @@ services:
 
   hadoop-datanode:
     image: "uhopper/hadoop-datanode"
+    ports:
+    - '50010:50010'
     environment:
     - CORE_CONF_fs_defaultFS=hdfs://hadoop-namenode:8020
     - CLUSTER_NAME=hadoop-sandbox
