@@ -28,11 +28,10 @@ public class RandomFailureBolt extends BaseRichBolt {
     @Override
     public void execute(Tuple input) {
         Integer i = r.nextInt(100);
-        if(i < MAX_PERCENT_OF_FAILILURES) {
+        if (i < MAX_PERCENT_OF_FAILILURES) {
             collector.emit(input, new Values(input.getString(0), input.getString(1)));
             collector.ack(input);
-        }
-        else {
+        } else {
             collector.fail(input);
         }
     }

@@ -5,7 +5,6 @@ import org.apache.storm.trident.tuple.TridentTuple;
 import org.apache.storm.tuple.Values;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Split implements FlatMapFunction {
@@ -15,7 +14,7 @@ public class Split implements FlatMapFunction {
     @Override
     public Iterable<Values> execute(TridentTuple input) {
         List<Values> result = new ArrayList<>();
-        for(String word : input.getString(0).split("\\s+")) {
+        for (String word : input.getString(0).split("\\s+")) {
             result.add(new Values(word));
         }
 

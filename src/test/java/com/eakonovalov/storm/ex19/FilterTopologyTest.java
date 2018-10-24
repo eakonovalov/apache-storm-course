@@ -4,8 +4,6 @@ import org.apache.storm.LocalCluster;
 import org.apache.storm.LocalDRPC;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class FilterTopologyTest {
 
     @Test
@@ -15,7 +13,7 @@ public class FilterTopologyTest {
 
         cluster.submitTopology("Filter-Topology", FilterTopology.createConfig(), FilterTopology.createTopology(drpc));
 
-        for(String sentence : new String[] {"First Page", "Second Line", "Third word in the Book"}) {
+        for (String sentence : new String[]{"First Page", "Second Line", "Third word in the Book"}) {
             System.out.println("Result for '" + sentence + "' : " + drpc.execute("Filter", sentence));
         }
 

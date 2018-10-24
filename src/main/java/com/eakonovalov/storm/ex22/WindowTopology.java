@@ -6,7 +6,8 @@ import org.apache.storm.trident.TridentTopology;
 import org.apache.storm.trident.operation.builtin.Debug;
 import org.apache.storm.trident.windowing.InMemoryWindowsStoreFactory;
 import org.apache.storm.trident.windowing.WindowsStoreFactory;
-import org.apache.storm.trident.windowing.config.*;
+import org.apache.storm.trident.windowing.config.TumblingDurationWindow;
+import org.apache.storm.trident.windowing.config.WindowConfig;
 import org.apache.storm.tuple.Fields;
 
 import java.util.concurrent.TimeUnit;

@@ -30,14 +30,14 @@ public class IntegerSpout extends BaseRichSpout {
         this.collector = collector;
         failureCount = new HashMap<>();
         toSend = new ArrayList<>();
-        for(int i = 0; i < 100 ; i++) {
+        for (int i = 0; i < 100; i++) {
             toSend.add(i);
         }
     }
 
     @Override
     public void nextTuple() {
-        if(!toSend.isEmpty()) {
+        if (!toSend.isEmpty()) {
             for (Integer i : toSend) {
                 int bucket = i / 10;
                 collector.emit(new Values(Integer.toString(i), Integer.toString(bucket)), i);
@@ -56,16 +56,15 @@ public class IntegerSpout extends BaseRichSpout {
         Integer count = 1;
         Integer failedId = (Integer) msgId;
 
-        if(failureCount.containsKey(failedId)) {
+        if (failureCount.containsKey(failedId)) {
             count = failureCount.get(failedId);
         }
 
-        if(count < MAX_FAILS) {
+        if (count < MAX_FAILS) {
             LOG.info("Resending message [" + failedId + "] for the " + count + " time");
             failureCount.put(failedId, ++count);
             toSend.add(failedId);
-        }
-        else {
+        } else {
             LOG.info("Sending message [" + failedId + "] failed after " + MAX_FAILS + " retries!");
         }
     }

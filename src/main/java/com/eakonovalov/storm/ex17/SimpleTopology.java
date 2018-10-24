@@ -3,7 +3,6 @@ package com.eakonovalov.storm.ex17;
 import org.apache.storm.Config;
 import org.apache.storm.LocalDRPC;
 import org.apache.storm.generated.StormTopology;
-import org.apache.storm.trident.Stream;
 import org.apache.storm.trident.TridentTopology;
 import org.apache.storm.tuple.Fields;
 

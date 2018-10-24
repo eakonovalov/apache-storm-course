@@ -2,7 +2,6 @@ package com.eakonovalov.storm.ex20;
 
 import com.eakonovalov.storm.ex18.Split;
 import com.eakonovalov.storm.ex18.ToLowercase;
-import com.eakonovalov.storm.ex19.FilterShort;
 import org.apache.storm.Config;
 import org.apache.storm.LocalDRPC;
 import org.apache.storm.generated.StormTopology;

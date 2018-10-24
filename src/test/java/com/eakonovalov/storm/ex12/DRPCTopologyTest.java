@@ -13,7 +13,7 @@ public class DRPCTopologyTest {
         try {
             cluster.submitTopology("Plus-Ten-Topology", DRPCTopology.createConfig(), DRPCTopology.createTopology(drpc));
 
-            for(Integer i : new Integer[] {53, 62, 70}) {
+            for (Integer i : new Integer[]{53, 62, 70}) {
                 System.out.println("Result for " + i + " = " + drpc.execute("Plus-Ten-Function", String.valueOf(i)));
             }
 

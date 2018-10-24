@@ -19,7 +19,7 @@ public class ErrorAggregator extends BaseAggregator<ErrorAggregator.State> {
 
     @Override
     public void aggregate(State state, TridentTuple tuple, TridentCollector collector) {
-        if(tuple.getString(0).equals("Failure")) {
+        if (tuple.getString(0).equals("Failure")) {
             state.count++;
         }
     }

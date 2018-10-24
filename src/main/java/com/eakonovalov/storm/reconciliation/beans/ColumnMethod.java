@@ -29,6 +29,7 @@ public enum ColumnMethod {
 
         return null;
     }
+
     public static ColumnMethod get(int intValue) {
         switch (intValue) {
             case 0:

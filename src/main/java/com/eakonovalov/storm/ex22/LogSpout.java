@@ -30,10 +30,9 @@ public class LogSpout extends BaseRichSpout {
     @Override
     public void nextTuple() {
         Integer i = r.nextInt(100);
-        if(i < MAX_PERCENT_OF_FAILILURES) {
+        if (i < MAX_PERCENT_OF_FAILILURES) {
             collector.emit(new Values("Success"));
-        }
-        else {
+        } else {
             collector.emit(new Values("Failure"));
         }
     }

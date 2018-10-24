@@ -48,7 +48,7 @@ public class ReadFileBolt extends BaseBasicBolt {
 
             pstmt.setInt(1, columnSetId);
             try (ResultSet rs = pstmt.executeQuery()) {
-                while(rs.next()) {
+                while (rs.next()) {
                     int columnType = rs.getInt("type");
                     if (columnType == ColumnType.KEY.getCode()) {
                         keyColumns.add(rs.getInt("no"));
@@ -66,10 +66,10 @@ public class ReadFileBolt extends BaseBasicBolt {
             for (CSVRecord record : records) {
                 List<String> keys = new ArrayList<>();
                 List<String> values = new ArrayList<>();
-                for(Integer i : keyColumns) {
+                for (Integer i : keyColumns) {
                     keys.add(record.get(i));
                 }
-                for(Integer i : valueColumns) {
+                for (Integer i : valueColumns) {
                     values.add(record.get(i));
                 }
                 collector.emit(new Values(input.getLong(0), fileType, fileName, keys, values));

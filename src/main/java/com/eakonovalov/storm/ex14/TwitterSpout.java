@@ -78,7 +78,7 @@ public class TwitterSpout extends BaseRichSpout {
             throw new RuntimeException(e);
         }
 
-        if(status != null) {
+        if (status != null) {
             collector.emit(new Values(status));
         }
     }

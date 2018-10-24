@@ -14,18 +14,6 @@ public class ConnectionPool {
     private static ConnectionPool instance;
     private BasicDataSource pool;
 
-    public static ConnectionPool getInstance() {
-        if(instance == null) {
-            synchronized (ConnectionPool.class) {
-                if(instance == null) {
-                    instance = new ConnectionPool(URL, USER, PASSWORD);
-                }
-            }
-        }
-
-        return instance;
-    }
-
     private ConnectionPool(String url, String user, String password) {
         pool = new BasicDataSource();
         pool.setUrl(url);
@@ -34,6 +22,18 @@ public class ConnectionPool {
         pool.setDriverClassName(DRIVER);
         pool.setInitialSize(1);
         pool.setMaxTotal(5);
+    }
+
+    public static ConnectionPool getInstance() {
+        if (instance == null) {
+            synchronized (ConnectionPool.class) {
+                if (instance == null) {
+                    instance = new ConnectionPool(URL, USER, PASSWORD);
+                }
+            }
+        }
+
+        return instance;
     }
 
     public DataSource getDataSource() {

@@ -4,8 +4,6 @@ import org.apache.storm.LocalCluster;
 import org.apache.storm.LocalDRPC;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class SimpleTopologyTest {
 
     @Test
@@ -15,7 +13,7 @@ public class SimpleTopologyTest {
 
         cluster.submitTopology("Simple-Topology", SimpleTopology.createConfig(), SimpleTopology.createTopology(drpc));
 
-        for(String word : new String[] {"word1", "word2", "word3"}) {
+        for (String word : new String[]{"word1", "word2", "word3"}) {
             System.out.println("Result for " + word + " : " + drpc.execute("Simple", word));
         }
 

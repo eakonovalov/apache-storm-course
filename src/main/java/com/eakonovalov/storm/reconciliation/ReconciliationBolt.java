@@ -41,30 +41,27 @@ public class ReconciliationBolt extends BaseBatchBolt<Long> {
         List<String> keys = (List<String>) tuple.getValue(3);
         List<String> values = (List<String>) tuple.getValue(4);
 
-        if(matches.contains(keys)) {
-            if("PRE".equals(fileType)) {
+        if (matches.contains(keys)) {
+            if ("PRE".equals(fileType)) {
                 preDuplicates++;
             } else {
                 postDuplicates++;
             }
-        }
-        else {
+        } else {
             Map<List<String>, List<String>> self = "PRE".equals(fileType) ? preValues : postValues;
             Map<List<String>, List<String>> target = "PRE".equals(fileType) ? postValues : preValues;
 
-            if(self.containsKey(keys)) {
-                if("PRE".equals(fileType)) {
+            if (self.containsKey(keys)) {
+                if ("PRE".equals(fileType)) {
                     preDuplicates++;
                 } else {
                     postDuplicates++;
                 }
-            }
-            else {
-                if(target.get(keys) != null) {
+            } else {
+                if (target.get(keys) != null) {
                     target.remove(keys);
                     matches.add(keys);
-                }
-                else {
+                } else {
                     self.putIfAbsent(keys, values);
                 }
             }

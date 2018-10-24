@@ -13,7 +13,7 @@ public class MapTopologyTest {
 
         cluster.submitTopology("Map-Topology", MapTopology.createConfig(), MapTopology.createTopology(drpc));
 
-        for(String sentence : new String[] {"First Page", "Second Line", "Third word in the Book"}) {
+        for (String sentence : new String[]{"First Page", "Second Line", "Third word in the Book"}) {
             System.out.println("Result for '" + sentence + "' : " + drpc.execute("Map", sentence));
         }
 

@@ -1,7 +1,5 @@
 package com.eakonovalov.storm.ex14;
 
-import com.eakonovalov.storm.ex13.IntegerSpout;
-import com.eakonovalov.storm.ex13.RandomFailureBolt;
 import org.apache.storm.Config;
 import org.apache.storm.generated.StormTopology;
 import org.apache.storm.topology.TopologyBuilder;
