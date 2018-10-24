@@ -16,8 +16,8 @@ public class RandomFailureBolt extends BaseRichBolt {
     private static final long serialVersionUID = 1998197408597147062L;
 
     private static final Integer MAX_PERCENT_OF_FAILILURES = 80;
-    private static final Random r = new Random(System.currentTimeMillis());
 
+    private Random r = new Random(System.currentTimeMillis());
     private OutputCollector collector;
 
     @Override
